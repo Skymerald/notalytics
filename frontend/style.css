@@ -1,0 +1,10 @@
+:root{
+    --main-color : rgb(29, 29, 29);
+    --secondary-color : rgb(255, 255, 255);
+
+    --transparent : rgba(0,0,0,0);
+}
+button{
+    background-color: none;
+    outline: none;
+}
