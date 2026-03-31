@@ -3,8 +3,84 @@
     --secondary-color : rgb(255, 255, 255);
 
     --transparent : rgba(0,0,0,0);
+
+    --main-shadow : rgb(102, 102, 102);
+    --secondary-shadow : rgb(192, 192, 192);
 }
+*{
+    padding : 0;
+    margin : 0;
+}
+
+/* GLOBAL STYLE : applied to all the element */
+body{
+    font-family : "Lato", Arial;
+    color : var(--main-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width : 100vw;
+    height : 100vh;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
 button{
-    background-color: none;
+    background: none;
+
     outline: none;
+    border: solid var(--main-color) 0.1rem;
+    border-radius: 0.4rem;
+
+    padding : 0.3rem;
+
+    transition: all 0.2s;
+}
+button:hover{
+    cursor: pointer;
+
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+input{
+    outline: none;
+    border: solid var(--main-color) 0.1rem;
+    border-radius: 0.5rem;
+
+    padding: 0.5rem;
+
+    width : 13rem;
+}
+
+/* GLOBAL CLASS : most common classes */
+.center-panel{
+    display : flex;
+    flex-direction : column;
+    
+    align-items : center;
+    gap : 1.5rem;
+
+    width : fit-content;
+    padding : 1.5rem;
+
+    border : solid var(--main-color) 0.1rem;
+    border-radius: 1rem;
+
+    box-shadow: 0.2rem 0.2rem 0.7rem var(--main-shadow), 0.1rem 0.1rem 0.3rem var(--secondary-shadow);
+}
+
+.input-w-icon{
+    padding-left : 1.8rem;
+}
+.input-icon{
+    transform : translate(-6.5rem, -3rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

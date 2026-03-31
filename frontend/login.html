@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a1bb3c16d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
     <title>Notalytics • Connexion</title>
 </head>
 <body>
-    <main>
+    <main class="center-panel">
         <h1>Connexion</h1>
-        <input type="text"  placeholder="Identifiant" required autofocus />
-        <input type="password" placeholder="Mot de passe" autofocus required />
+        <input type="text" class="input-w-icon" placeholder="Identifiant" required autofocus />
+        <i class="fa-regular fa-user input-icon"></i>
+        <input type="password" class="input-w-icon" placeholder="Mot de passe" autofocus required />
+        <i class="fa-solid fa-key input-icon"></i>
         <button>Se connecter</button>
     </main>
 </body>
