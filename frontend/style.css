@@ -1,11 +1,14 @@
 :root{
-    --main-color : rgb(29, 29, 29);
+    --main-color : #e0aaff;
     --secondary-color : rgb(255, 255, 255);
+
+    --white : rgb(255,255,255);
+    --black : rgb(50,50,50);
 
     --transparent : rgba(0,0,0,0);
 
-    --main-shadow : rgb(102, 102, 102);
-    --secondary-shadow : rgb(192, 192, 192);
+    --main-shadow : rgb(155, 155, 155);
+    --secondary-shadow : rgb(200, 200, 200);
 }
 *{
     padding : 0;
@@ -23,6 +26,9 @@ body{
 
     width : 100vw;
     height : 100vh;
+
+    background: #ffffff;
+    background: linear-gradient(5deg,var(--white) 70%, var(--main-color) 100%);
 }
 
 h1{
@@ -54,10 +60,21 @@ input{
 
     padding: 0.5rem;
 
-    width : 13rem;
+    width : auto;
 }
 
 /* GLOBAL CLASS : most common classes */
+.input-flex{
+    display: flex;
+    align-items: center;
+}
+.icon-input{
+    padding-left: 1rem;
+}
+.input-icon{
+    
+}
+
 .center-panel{
     display : flex;
     flex-direction : column;
@@ -68,19 +85,8 @@ input{
     width : fit-content;
     padding : 1.5rem;
 
-    border : solid var(--main-color) 0.1rem;
+    border : solid var(--transparent) 0.1rem;
     border-radius: 1rem;
 
-    box-shadow: 0.2rem 0.2rem 0.7rem var(--main-shadow), 0.1rem 0.1rem 0.3rem var(--secondary-shadow);
-}
-
-.input-w-icon{
-    padding-left : 1.8rem;
-}
-.input-icon{
-    transform : translate(-6.5rem, -3rem);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--main-shadow), 0.2rem 0.2rem 0.3rem var(--secondary-shadow);
 }
