@@ -15,13 +15,17 @@
     <title>Notalytics • Connexion</title>
 </head>
 <body>
-    <main class="center-panel">
+    <form class="center-panel">
         <h1>Connexion</h1>
-        <input type="text" class="input-w-icon" placeholder="Identifiant" required autofocus />
-        <i class="fa-regular fa-user input-icon"></i>
-        <input type="password" class="input-w-icon" placeholder="Mot de passe" autofocus required />
-        <i class="fa-solid fa-key input-icon"></i>
-        <button>Se connecter</button>
-    </main>
+        <div class="icon-input">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" placeholder="Identifiant" required autofocus />
+        </div>
+        <div class="icon-input">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" placeholder="Mot de passe" autofocus required />
+        </div>
+        <button type="submit">Se connecter</button>
+    </form>
 </body>
 </html>
