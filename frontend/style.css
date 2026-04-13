@@ -1,14 +1,16 @@
 :root{
-    --main-color : #e0aaff;
-    --secondary-color : rgb(255, 255, 255);
-
-    --white : rgb(255,255,255);
-    --black : rgb(50,50,50);
-
     --transparent : rgba(0,0,0,0);
 
-    --main-shadow : rgb(155, 155, 155);
-    --secondary-shadow : rgb(200, 200, 200);
+    --dark-amethyst: #10002bff;
+    --dark-amethyst-2: #240046ff;
+    --indigo-ink: #3c096cff;
+    --indigo-velvet: #5a189aff;
+    --royal-violet: #7b2cbfff;
+    --lavender-purple: #9d4eddff;
+    --mauve-magic: #c77dffff;
+    --mauve: #e0aaffff;
+
+    --strawberry-red: #ef233c;
 }
 *{
     padding : 0;
@@ -18,7 +20,7 @@
 /* GLOBAL STYLE : applied to all the element */
 body{
     font-family : "Lato", Arial;
-    color : var(--main-color);
+    color : var(--mauve);
 
     display: flex;
     justify-content: center;
@@ -27,8 +29,7 @@ body{
     width : 100vw;
     height : 100vh;
 
-    background: #ffffff;
-    background: linear-gradient(5deg,var(--white) 70%, var(--main-color) 100%);
+    background: linear-gradient(0.10turn, var(--dark-amethyst), var(--indigo-ink));
 }
 
 h1{
@@ -39,18 +40,19 @@ button{
     background: none;
 
     outline: none;
-    border: solid var(--main-color) 0.1rem;
+    border: solid var(--lavender-purple) 0.1rem;
     border-radius: 0.4rem;
 
-    padding : 0.3rem;
+    color: var(--mauve);
+
+    padding : 0.4rem;
 
     transition: all 0.2s;
 }
 button:hover{
     cursor: pointer;
 
-    background-color: var(--main-color);
-    color: var(--secondary-color);
+    background-color: var(--lavender-purple);   
 }
 
 input{
@@ -60,21 +62,10 @@ input{
 
     padding: 0.5rem;
 
-    width : auto;
+    width : 100%;
 }
 
 /* GLOBAL CLASS : most common classes */
-.input-flex{
-    display: flex;
-    align-items: center;
-}
-.icon-input{
-    padding-left: 1rem;
-}
-.input-icon{
-    
-}
-
 .center-panel{
     display : flex;
     flex-direction : column;
@@ -85,8 +76,39 @@ input{
     width : fit-content;
     padding : 1.5rem;
 
-    border : solid var(--transparent) 0.1rem;
+    border : solid var(--lavender-purple) 0.1rem;
     border-radius: 1rem;
 
-    box-shadow: 0.2rem 0.2rem 0.5rem var(--main-shadow), 0.2rem 0.2rem 0.3rem var(--secondary-shadow);
+    background-color: var(--indigo-velvet);
+
+    box-shadow: 0.2rem 0.2rem 0.7rem var(--dark-amethyst), -0.05rem -0.05rem 0.3rem var(--royal-violet);
+}
+
+
+input{
+    border : var(--lavender-purple) solid 0.1rem;
+
+    background-color: var(--transparent);
+
+    color : var(--mauve);
+}
+
+.icon-input{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+.icon-input i {
+    z-index: 1;
+
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--lavender-purple);
+}
+.icon-input input{
+    padding-left: 1.75rem;
 }
