@@ -11,6 +11,8 @@
     --mauve: #e0aaffff;
 
     --strawberry-red: #ef233c;
+    --bright-lemon: #f4e409;
+    --bright-fern: #38b000;
 }
 *{
     padding : 0;
@@ -111,4 +113,78 @@ input{
 }
 .icon-input input{
     padding-left: 1.75rem;
+}
+
+/* SPECIFIC CLASS : used for up to 5 elements */
+
+/* PUSH NOTIFICATION CLASS : class related only to the push notifications*/
+.push-wrapper{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    bottom: 1rem;
+    right: 1rem;
+
+    height: 15vh;
+    width: 25vw;
+
+    overflow-x: hidden;
+}
+.push{
+    position: relative;
+    right : -25vw;
+
+    width: 20vw;
+
+    background: color(srgb 1 1 1 / 0.4);
+    border: solid #FFF 0.15rem;
+    border-radius: 1rem;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    animation: 0.6s ease 0s push-open forwards;
+}
+
+.push i{
+    font-size: 2rem;
+}
+
+.push-error{
+    background-color: color(from var(--strawberry-red) srgb r g b / 0.4);
+    border-color: var(--strawberry-red);
+    color: var(--strawberry-red);
+}
+.push-warning{
+    background-color: color(from var(--bright-lemon) srgb r g b / 0.4);
+    border-color: var(--bright-lemon);
+    color: var(--bright-lemon);
+}
+.push-success{
+    background-color: color(from var(--bright-fern) srgb r g b / 0.4);
+    border-color: var(--bright-fern);
+    color: var(--bright-fern);
+}
+
+@keyframes push-open{
+    from{
+        right: -25vw;
+    }
+    to{
+        right: 0vw;
+    }
+}
+@keyframes push-close{
+    from{
+        right: 0vw;
+    }
+    to{
+        right: -25vw;
+    }
 }
