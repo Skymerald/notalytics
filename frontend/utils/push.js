@@ -4,48 +4,43 @@ document.querySelector('body').innerHTML += `
 
 let wrapper = document.querySelector('.push-wrapper');
 
-function push(pushText){
-    let pushTemplate = `
-        <div class="push">
-            <p>${pushText}</p>
-        </div>
-    `
-
-    wrapper.innerHTML += pushTemplate;
-}
-
-function pushError(errorText){
-    push(errorText);
-
-    let lastPush = document.querySelectorAll('.push')[document.querySelectorAll('.push').length - 1];
-
-    lastPush.classList.add('push-error');
+function push(pushText, pushType){
+    const pushTemplate = document.createElement('div');
+    pushTemplate.className = 'push';
+    pushTemplate.innerHTML = `<p>${pushText}</p>`;
 
     let icon = document.createElement('i');
-    icon.classList.add('fa-regular', 'fa-circle-xmark');
-    lastPush.insertBefore(icon, lastPush.querySelector('p'));
+
+    if(pushType == "error"){
+        pushTemplate.classList.add('push-error');
+
+        icon.classList.add('fa-regular', 'fa-circle-xmark');
+    }
+    else if(pushType == "warning"){
+        pushTemplate.classList.add('push-warning');
+
+        icon.classList.add('fa-solid', 'fa-triangle-exclamation');
+    }
+    else if(pushType == "success"){
+        pushTemplate.classList.add('push-success');
+
+        icon.classList.add('fa-regular', 'fa-circle-check');
+    }
+    else{
+        console.error("Push type is not supported.");
+    }
+
+    pushTemplate.insertBefore(icon, pushTemplate.querySelector('p'));
+
+    wrapper.appendChild(pushTemplate);
+
+    pushTemplate.classList.add('push-open')
+    setTimeout(() => {
+        pushTemplate.classList.remove('push-open');
+        pushTemplate.classList.add('push-close');
+
+        setTimeout(() => {
+            pushTemplate.remove();
+        }, 600);
+    }, 3000);
 }
-function pushWarning(warningText){
-    push(warningText);
-
-    let lastPush = document.querySelectorAll('.push')[document.querySelectorAll('.push').length - 1];
-
-    lastPush.classList.add('push-warning');
-
-    let icon = document.createElement('i');
-    icon.classList.add('fa-regular', 'fa-triangle-exclamation');
-    lastPush.insertBefore(icon, lastPush.querySelector('p'));
-}
-function pushSuccess(successText){
-    push(successText);
-
-    let lastPush = document.querySelectorAll('.push')[document.querySelectorAll('.push').length - 1];
-
-    lastPush.classList.add('push-success');
-
-    let icon = document.createElement('i');
-    icon.classList.add('fa-regular', 'fa-circle-check');
-    lastPush.insertBefore(icon, lastPush.querySelector('p'));
-}
-
-pushWarning("Mot de passe et/ou identifiant incorret.");

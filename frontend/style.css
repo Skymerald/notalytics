@@ -121,15 +121,18 @@ input{
 .push-wrapper{
     position: fixed;
     display: flex;
+    gap: 1vh;
     flex-direction: column;
 
     bottom: 1rem;
     right: 1rem;
 
-    height: 15vh;
     width: 25vw;
 
     overflow-x: hidden;
+    overflow-y: hidden;
+
+    transition: height 0.3s ease;
 }
 .push{
     position: relative;
@@ -144,16 +147,17 @@ input{
     padding: 1rem;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     text-align: center;
 
-    animation: 0.6s ease 0s push-open forwards;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .push i{
     font-size: 2rem;
+    justify-self: right;
 }
 
 .push-error{
@@ -172,6 +176,12 @@ input{
     color: var(--bright-fern);
 }
 
+.push-open{
+    animation: 0.6s ease 0s push-open forwards;
+}
+.push-close{
+    animation: 0.6s ease 0s push-close forwards;
+}
 @keyframes push-open{
     from{
         right: -25vw;
